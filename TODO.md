@@ -1,0 +1,3 @@
+- [ ] Add lang attr to text written in a different language
+- [ ] Use the `:lang()` pseudoclass to adjust the typography and layout
+- [x] Configure custom headers in netlify.toml
