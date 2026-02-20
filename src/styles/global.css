@@ -1,3 +1,18 @@
+@view-transition {
+	navigation: auto;
+}
+
+html {
+	color-scheme: light dark;
+}
+
 body {
-	font-family: system-ui, sans-serif;
+	padding: 1lh;
+	font-family: system-ui;
+	font-size: clamp(1rem, 0.9489rem + 0.2273vw, 1.125rem); /* 16px — 18px */
+	line-height: 1.5;
+}
+
+h1 {
+	line-height: 1.1;
 }
