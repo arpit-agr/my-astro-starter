@@ -1,1 +1,4 @@
-@import url(global.css);
+@layer reset, global;
+
+@import url(reset.css) layer(reset);
+@import url(global.css) layer(global);
