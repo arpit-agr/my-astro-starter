@@ -1,0 +1,83 @@
+---
+import stylesUrl from '@styles/style.css?url';
+import HTMLKitchenSink from '@components/HTMLKitchenSink.astro';
+
+interface Props {
+	title: string; // must be unique, concise, descriptive
+	desc?: string;
+	ogTitle?: string;
+	ogDesc?: string;
+	ogImg?: string;
+	ogImgAlt?: string;
+	ogLocale?: string;
+	ogType?: string;
+	ogUrl?: string;
+}
+
+const {
+	title,
+	desc,
+	ogTitle = title,
+	ogDesc = desc,
+	ogImg,
+	ogImgAlt,
+	ogLocale = 'en_IN',
+	ogType = 'website',
+	ogUrl = Astro.url,
+} = Astro.props;
+
+const canonicalURL = Astro.url;
+---
+
+<html lang="en" class="no-js">
+	<head>
+		<!-- Character encoding and viewport width -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Page title -->
+		<title>{title}</title>
+
+		<!-- Synchronous CSS -->
+		<link rel="stylesheet" href={stylesUrl} />
+
+		<!-- Deferred JavaScript -->
+		<script type="module" is:inline>
+			document.documentElement.classList.remove('no-js');
+			document.documentElement.classList.add('js');
+		</script>
+
+		<!-- Everything else (description, open graph info, icons, etc.) -->
+		{!!desc && <meta name="description" content={desc} />}
+		{!!ogTitle && <meta property="og:title" content={ogTitle} />}
+		{!!ogDesc && <meta property="og:description" content={ogDesc} />}
+		{!!ogImg && <meta property="og:image" content={ogImg} />}
+		{!!ogImgAlt && <meta property="og:image:alt" content={ogImgAlt} />}
+		{!!ogLocale && <meta property="og:locale" content={ogLocale} />}
+		{!!ogType && <meta property="og:type" content={ogType} />}
+		{!!ogImg && <meta name="twitter:card" content="summary_large_image" />}
+		{!!ogUrl && <meta property="og:url" content={ogUrl} />}
+		<link rel="canonical" href={canonicalURL} />
+		{
+			import.meta.env.DEV ? (
+				<link
+					rel="icon"
+					href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚨</text></svg>"
+				/>
+			) : (
+				<Fragment>
+					<link rel="icon" href="/favicon.ico" />
+					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+					<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+					<link rel="manifest" href="/my.webmanifest" />
+				</Fragment>
+			)
+		}
+		<meta name="generator" content={Astro.generator} />
+	</head>
+	<body>
+		<slot>
+			<HTMLKitchenSink />
+		</slot>
+	</body>
+</html>
