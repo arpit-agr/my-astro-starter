@@ -1,0 +1,216 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+:not(dialog) {
+	margin: 0;
+}
+
+:root {
+	@supports (interpolate-size: allow-keywords) {
+		interpolate-size: allow-keywords; /* enables animations & transitions between a length/percentage value and an intrinsic size value */
+	}
+}
+
+html {
+	block-size: 100%;
+	text-size-adjust: none; /* Prevent font size inflation */
+	hanging-punctuation: first last;
+	-webkit-font-smoothing: antialiased;
+	overflow-wrap: anywhere;
+
+	@media (prefers-reduced-motion: no-preference) {
+		scroll-behavior: smooth;
+	}
+}
+
+body {
+	min-block-size: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-wrap: balance;
+	@supports (text-box: trim-both cap alphabetic) {
+		text-box: trim-both cap alphabetic;
+	}
+}
+
+p,
+li,
+dd {
+	max-inline-size: var(--measure, 60ch);
+	text-wrap: pretty;
+}
+
+dd {
+	margin-inline-start: 1lh;
+}
+
+/* Remove list styles on ul, ol with a list role, which suggests default styling will be removed */
+ol[role='list'],
+ul[role='list'] {
+	list-style: none;
+	padding-inline-start: 0; /* Browsers default padding-inline-start: 40px */
+}
+
+a {
+	text-underline-offset: 0.125em; /* 2px at 16px font size */
+}
+
+button,
+[type='button'],
+[type='submit'],
+[type='reset'] {
+	border: 0.0625em solid #0000;
+	transition: scale 50ms ease-in;
+
+	&:active {
+		scale: 0.98;
+	}
+}
+
+input,
+button,
+textarea,
+select,
+input[type='file']::-webkit-file-upload-button {
+	font: inherit;
+	color: inherit;
+	letter-spacing: inherit;
+}
+
+select,
+textarea {
+	@supports (field-sizing: content) {
+		field-sizing: content;
+	}
+}
+
+textarea {
+	resize: block;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+	min-block-size: 5lh;
+}
+
+a[href],
+area,
+button,
+input:not(
+	[type='text'],
+	[type='email'],
+	[type='number'],
+	[type='password'],
+	[type=''],
+	[type='tel'],
+	[type='url']
+),
+label[for],
+select,
+summary,
+[tabindex]:not([tabindex*='-'], pre),
+::file-selector-button {
+	cursor: pointer;
+}
+
+a[href],
+area,
+button,
+input,
+label[for],
+select,
+summary,
+textarea,
+[tabindex]:not([tabindex*='-']) {
+	touch-action: manipulation;
+	-webkit-tap-highlight-color: transparent;
+}
+
+[disabled],
+label:has([disabled]) {
+	opacity: 0.37;
+	cursor: not-allowed;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+	display: block;
+}
+
+img,
+svg,
+video {
+	max-inline-size: 100%;
+	block-size: auto;
+}
+
+blockquote {
+	> :first-child::before {
+		content: open-quote;
+	}
+	> :last-child::after {
+		content: close-quote;
+	}
+}
+
+hr {
+	block-size: 0;
+	border-style: solid;
+	border-width: 0.0625em 0 0;
+	color: inherit;
+	overflow: visible;
+}
+
+pre,
+code,
+kbd {
+	font-family:
+		ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas,
+		'DejaVu Sans Mono', monospace;
+}
+
+:not(pre) > code,
+kbd {
+	white-space: nowrap;
+}
+
+pre {
+	tab-size: 2;
+	white-space: pre;
+	min-inline-size: 0;
+	max-inline-size: 100%;
+	overflow-inline: auto;
+	writing-mode: lr;
+	direction: ltr;
+}
+
+code {
+	background-color: color-mix(in srgb, currentColor, transparent 90%);
+}
+
+table {
+	/*caption-side: bottom;*/
+	border-collapse: collapse;
+
+	td,
+	th {
+		word-break: normal;
+		border: 0.0625rem solid;
+		padding: 0.25lh;
+	}
+}
