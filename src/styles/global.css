@@ -16,3 +16,25 @@ body {
 h1 {
 	line-height: 1.1;
 }
+
+blockquote {
+	position: relative;
+	margin-inline-start: 2ch;
+
+	&::before,
+	&::after {
+		position: absolute;
+		inset-inline-start: -1ch;
+		inset-block-start: 0;
+		font-size: 2em;
+		line-height: 1;
+	}
+
+	&::before {
+		content: open-quote;
+	}
+	&::after {
+		content: close-quote;
+		opacity: 0;
+	}
+}
