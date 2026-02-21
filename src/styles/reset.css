@@ -50,7 +50,7 @@ dd {
 }
 
 dd {
-	margin-inline-start: 1lh;
+	margin-inline-start: 2ch;
 }
 
 /* Remove list styles on ul, ol with a list role, which suggests default styling will be removed */
@@ -155,15 +155,6 @@ svg,
 video {
 	max-inline-size: 100%;
 	block-size: auto;
-}
-
-blockquote {
-	> :first-child::before {
-		content: open-quote;
-	}
-	> :last-child::after {
-		content: close-quote;
-	}
 }
 
 hr {
