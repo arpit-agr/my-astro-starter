@@ -50,7 +50,7 @@ dd {
 }
 
 dd {
-	margin-inline-start: 2ch;
+	margin-inline-start: 1lh;
 }
 
 /* Remove list styles on ul, ol with a list role, which suggests default styling will be removed */
