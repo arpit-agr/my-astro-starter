@@ -19,7 +19,7 @@ h1 {
 
 @supports (anchor-name: --blockquote) {
 	blockquote {
-		margin-inline-start: 2ch;
+		margin-inline-start: 1lh;
 
 		anchor-name: --blockquote;
 		anchor-scope: --blockquote;
