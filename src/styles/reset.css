@@ -82,8 +82,6 @@ textarea,
 select,
 input[type='file']::-webkit-file-upload-button {
 	font: inherit;
-	color: inherit;
-	letter-spacing: inherit;
 }
 
 select,
@@ -200,7 +198,9 @@ pre {
 }
 
 code {
-	background-color: color-mix(in srgb, currentColor, transparent 90%);
+	padding: 0.125lh;
+	background-color: color-mix(in oklch, currentColor 8%, transparent);
+	font-size: 0.9em;
 }
 
 table {
