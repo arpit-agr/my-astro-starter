@@ -7,14 +7,13 @@ html {
 }
 
 body {
-	padding: 1lh;
 	font-family: system-ui;
-	font-size: clamp(1rem, 0.9489rem + 0.2273vw, 1.125rem); /* 16px — 18px */
-	line-height: 1.5;
+	font-size: var(--text-size);
+	line-height: var(--leading-normal);
 }
 
 h1 {
-	line-height: 1.1;
+	line-height: var(--leading-tight);
 }
 
 @supports (anchor-name: --blockquote) {
@@ -29,7 +28,7 @@ h1 {
 			position: absolute;
 			position-anchor: --blockquote;
 			position-area: inline-start span-block-end;
-			padding-inline: 0.25ch;
+			margin-inline-end: 0.25lh;
 
 			font-size: 2em;
 			line-height: 1;
