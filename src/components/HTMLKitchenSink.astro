@@ -2,7 +2,7 @@
 	<section class="flow">
 		<hgroup class="flow">
 			<h1>h1 HTML5 Kitchen Sink</h1>
-			<p>Modified version of HTML5 Kitchen sink by @dbox</p>
+			<p>Modified version of HTML5 Kitchen sink by @dbox (via Chris Coyier)</p>
 		</hgroup>
 		<hr />
 		<h2>h2 HTML5 Kitchen Sink</h2>
@@ -22,7 +22,7 @@
 				</ul>
 			</nav>
 		</header>
-		<article>
+		<article class="flow">
 			<p>
 				This paragraph is nested inside an article. It contains many different,
 				sometimes useful,
@@ -42,30 +42,25 @@
 					>2</sub
 				>O) and sup (E = MC<sup>2</sup>) tags.
 			</p>
+			<blockquote>
+				<p>
+					This is a mult-line blockquote with a cite reference. People think
+					focus means saying yes to the thing you’ve got to focus on. But that’s
+					not what it means at all. It means saying no to the hundred other good
+					ideas that there are. You have to pick carefully. I’m actually as
+					proud of the things we haven’tdone as the things I have done.
+					Innovation is saying no to 1,000 things.
+				</p>
+				<cite>Steve Jobs – Apple Worldwide Developers’ Conference, 1997</cite>
+			</blockquote>
+			<pre><code>let i = 5;
+if (i &lt; 10 &amp;&amp; i &gt; 0)
+  return &quot;Single Digit Number&quot;
+</code></pre>
 		</article>
 		<aside>This is an aside.</aside>
 		<footer>This is footer for this section</footer>
 	</section>
-	<hr />
-	<section class="flow">
-		<blockquote>
-			<p>
-				Blockquote: I quickly explained that many big jobs involve few hazards
-			</p>
-		</blockquote>
-		<blockquote>
-			<p>
-				This is a mult-line blockquote with a cite reference. People think focus
-				means saying yes to the thing you’ve got to focus on. But that’s not
-				what it means at all. It means saying no to the hundred other good ideas
-				that there are. You have to pick carefully. I’m actually as proud of the
-				things we haven’tdone as the things I have done. Innovation is saying no
-				to 1,000 things.
-				<cite>Steve Jobs – Apple Worldwide Developers’ Conference, 1997</cite>
-			</p>
-		</blockquote>
-	</section>
-	<hr />
 	<div role="region" aria-labelledby="Caption01" tabindex="0">
 		<table>
 			<caption id="Caption01">Books in a Scrolling Container</caption>
@@ -340,7 +335,7 @@
 				<textarea id="example-textarea"></textarea>
 			</div>
 			<div>
-				<label for="example-input-file">File input</label>
+				<label class="sidebar" for="example-input-file">File input</label>
 				<input type="file" id="example-input-file" />
 			</div>
 			<fieldset>
