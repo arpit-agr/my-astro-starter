@@ -63,3 +63,7 @@ th {
 	background-color: color-mix(in srgb, var(--text) 80%, var(--bg));
 	color: var(--bg);
 }
+
+tr:nth-child(even) {
+	background-color: color-mix(in srgb, var(--text) 5%, var(--bg));
+}
