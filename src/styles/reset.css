@@ -31,6 +31,7 @@ html {
 
 body {
 	min-block-size: 100%;
+	font-family: var(--font-base, system-ui);
 }
 
 h1,
@@ -53,7 +54,7 @@ dd {
 }
 
 dd {
-	margin-inline-start: 1lh;
+	margin-inline-start: var(--dd-margin, 1lh);
 }
 
 /*——————————————————————————————————————————————————————————————————————————————
@@ -66,14 +67,18 @@ ul[role='list'] {
 }
 
 a {
-	text-underline-offset: 0.125em; /* 2px at 16px font size */
+	text-underline-offset: var(
+		--underline-offset,
+		0.125em
+	); /* 2px at 16px font size */
 }
 
 button,
 [type='button'],
 [type='submit'],
 [type='reset'] {
-	border: 0.0625em solid #0000;
+	border: var(--btn-border-width, 0.0625em) var(--btn-border-style, solid)
+		var(--btn-border-color, currentColor);
 	transition: scale 50ms ease-in;
 
 	&:active {
@@ -104,7 +109,7 @@ textarea {
  	Make sure textareas without a rows attribute are not tiny
 ——————————————————————————————————————————————————————————————————————————————*/
 textarea:not([rows]) {
-	min-block-size: 5lh;
+	min-block-size: var(--textarea-height, 5lh);
 }
 
 a[href],
@@ -144,7 +149,7 @@ textarea,
 
 [disabled],
 label:has([disabled]) {
-	opacity: 0.37;
+	opacity: var(--disabled-opacity, 0.37);
 	cursor: not-allowed;
 }
 
@@ -166,10 +171,46 @@ video {
 	block-size: auto;
 }
 
+blockquote {
+	padding-inline-start: var(--blockquote-padding-inline-start, 1lh);
+	border-inline-start: var(--blockquote-border, 0.25em)
+		var(--blockquote-border-style, solid)
+		var(--blockquote-border-color, currentColor);
+
+	/*@supports (anchor-name: --blockquote) {
+		padding: unset;
+		border: unset;
+		margin-inline-start: 1lh;
+
+		anchor-name: --blockquote;
+		anchor-scope: --blockquote;
+
+		&::before,
+		&::after {
+			position: absolute;
+			position-anchor: --blockquote;
+			position-area: inline-start span-block-end;
+			margin-inline-end: 0.25lh;
+
+			font-size: 2em;
+			line-height: 1;
+		}
+
+		&::before {
+			content: open-quote;
+		}
+		&::after {
+			content: close-quote;
+			opacity: 0;
+		}
+	}*/
+}
+
 hr {
 	block-size: 0;
-	border-style: solid;
-	border-width: 0.0625em 0 0;
+	border: none;
+	border-block-start: var(--hr-border-width, 0.0625em)
+		var(--hr-border-style, solid) var(--hr-border-color, currentColor);
 	color: inherit;
 	overflow: visible;
 }
@@ -177,30 +218,45 @@ hr {
 pre,
 code,
 kbd {
-	font-family:
-		ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas,
-		'DejaVu Sans Mono', monospace;
-}
-
-:not(pre) > code,
-kbd {
-	white-space: nowrap;
+	font-family: var(
+		--font-mono,
+		ui-monospace,
+		'Cascadia Code',
+		'Source Code Pro',
+		Menlo,
+		Consolas,
+		'DejaVu Sans Mono',
+		monospace
+	);
 }
 
 pre {
-	tab-size: 2;
-	white-space: pre;
-	min-inline-size: 0;
+	padding: var(--pre-padding, 0.25lh);
+	inline-size: fit-content;
 	max-inline-size: 100%;
+
+	outline: var(--pre-border-width, 0.0625rem) var(--pre-border-style, solid)
+		var(--pre-border-color, currentColor);
+
+	tab-size: var(--tab-size, 2);
+	white-space: pre;
 	overflow-inline: auto;
 	writing-mode: lr;
 	direction: ltr;
 }
 
-code {
-	padding: 0.125lh;
-	background-color: color-mix(in oklch, currentColor 8%, transparent);
-	font-size: 0.9em;
+:not(pre) > code,
+kbd {
+	font-size: var(--code-font-size, 0.9em);
+	white-space: nowrap;
+}
+
+:not(pre) > code {
+	padding: var(--code-padding, 0.125lh);
+	background-color: var(
+		--code-bg,
+		color-mix(in oklch, currentColor 8%, transparent)
+	);
 }
 
 /*——————————————————————————————————————————————————————————————————————————————
@@ -210,7 +266,8 @@ code {
 [role='region'][aria-labelledby][tabindex] {
 	inline-size: fit-content;
 	max-inline-size: 100%;
-	border: 0.0625rem solid;
+	border: var(--table-border-width, 0.0625rem) var(--table-border-style, solid)
+		var(--table-border-color, currentColor);
 	overflow: auto;
 }
 
@@ -222,8 +279,14 @@ table {
 caption,
 th,
 td {
-	padding: 0.25lh;
+	padding: var(--table-cell-padding, 0.25lh);
 	text-align: start;
+}
+
+caption {
+	position: sticky;
+	inset-inline-start: 0;
+	max-inline-size: fit-content;
 }
 
 th,
