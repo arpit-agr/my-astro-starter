@@ -1,8 +1,8 @@
 :root {
-	--bg: #fff;
-	--text: #000;
-
 	--text-size: clamp(1rem, 0.9489rem + 0.2273vw, 1.125rem); /* 16px — 18px */
+
+	--bg: canvas;
+	--text: canvasText;
 
 	--leading-tight: 1.1;
 	--leading-snug: 1.3;
