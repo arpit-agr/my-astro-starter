@@ -4,7 +4,7 @@
 
 html {
 	color-scheme: light dark;
-	/*accent-color: var(--accent-color);*/
+	accent-color: var(--accent-color);
 }
 
 body {
@@ -16,6 +16,20 @@ body {
 
 h1 {
 	line-height: var(--leading-tight);
+}
+
+a {
+	color: var(--accent-color);
+}
+
+input[type='checkbox'] {
+	&:checked {
+		background-color: var(--accent-color, currentColor);
+	}
+
+	&:checked::before {
+		border-color: var(--bg);
+	}
 }
 
 /*——————————————————————————————————————————————————————————————————————————————
