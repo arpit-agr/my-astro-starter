@@ -22,14 +22,20 @@ a {
 	color: var(--accent-color);
 }
 
-input[type='checkbox'] {
-	&:checked {
-		background-color: var(--accent-color, currentColor);
-	}
-
-	&:checked::before {
-		border-color: var(--bg);
-	}
+/*——————————————————————————————————————————————————————————————————————————————
+	Error state styles for inputs and textarea
+	https://adrianroselli.com/2019/09/under-engineered-text-boxen.html
+——————————————————————————————————————————————————————————————————————————————*/
+input:not([type='radio']):not([type='checkbox']):not([type='file']):not(
+		[type='image']
+	):not([type='range']):user-invalid,
+textarea:user-invalid {
+	background: linear-gradient(
+		135deg,
+		var(--error, red) 0,
+		var(--error, red) 0.25lh,
+		#0000 0.4em
+	);
 }
 
 /*——————————————————————————————————————————————————————————————————————————————
