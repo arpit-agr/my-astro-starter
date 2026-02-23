@@ -94,6 +94,67 @@ input[type='file']::-webkit-file-upload-button {
 	font: inherit;
 }
 
+/*——————————————————————————————————————————————————————————————————————————————
+	One last time: custom styling radio buttons and checkboxes
+	https://www.scottohara.me/blog/2021/09/24/custom-radio-checkbox-again.html
+——————————————————————————————————————————————————————————————————————————————*/
+input[type='radio'],
+input[type='checkbox'] {
+	--_input-size: 1em;
+
+	appearance: none;
+	position: relative;
+	display: inline-block;
+	inline-size: var(--_input-size);
+	block-size: var(--_input-size);
+	border: 0.0625em var(--input-border-style, solid)
+		var(--input-border-color, currentColor);
+	vertical-align: text-bottom;
+
+	&::before {
+		content: '';
+		position: absolute;
+		margin: auto;
+		inset: 0;
+	}
+}
+
+input[type='radio'] {
+	border-radius: 100%;
+
+	&::before {
+		inline-size: 0;
+		block-size: 0;
+	}
+
+	&:checked::before {
+		border: 0.3125em solid transparent;
+		border-radius: 100%;
+		background: var(--accent-color, currentColor);
+	}
+}
+
+input[type='checkbox'] {
+	--_checkbox-border: 0.125em;
+	border-radius: var(--checkbox-border-radius, 0%);
+}
+
+input[type='checkbox']:indeterminate::before,
+input[type='checkbox'][aria-checked='mixed']::before {
+	border-block-start: var(--_checkbox-border) solid
+		var(--accent-color, currentColor);
+	inline-size: 60%;
+	block-size: 0;
+}
+
+input[type='checkbox']:checked::before {
+	border-right: var(--_checkbox-border) solid var(--accent-color, currentColor);
+	border-bottom: var(--_checkbox-border) solid var(--accent-color, currentColor);
+	inline-size: 30%;
+	block-size: 50%;
+	transform: rotate(45deg) translateY(-20%) translateX(-10%);
+}
+
 select,
 textarea {
 	@supports (field-sizing: content) {
@@ -147,12 +208,6 @@ textarea,
 	-webkit-tap-highlight-color: transparent;
 }
 
-[disabled],
-label:has([disabled]) {
-	opacity: var(--disabled-opacity, 0.37);
-	cursor: not-allowed;
-}
-
 img,
 svg,
 video,
@@ -176,34 +231,6 @@ blockquote {
 	border-inline-start: var(--blockquote-border, 0.25em)
 		var(--blockquote-border-style, solid)
 		var(--blockquote-border-color, currentColor);
-
-	/*@supports (anchor-name: --blockquote) {
-		padding: unset;
-		border: unset;
-		margin-inline-start: 1lh;
-
-		anchor-name: --blockquote;
-		anchor-scope: --blockquote;
-
-		&::before,
-		&::after {
-			position: absolute;
-			position-anchor: --blockquote;
-			position-area: inline-start span-block-end;
-			margin-inline-end: 0.25lh;
-
-			font-size: 2em;
-			line-height: 1;
-		}
-
-		&::before {
-			content: open-quote;
-		}
-		&::after {
-			content: close-quote;
-			opacity: 0;
-		}
-	}*/
 }
 
 hr {
@@ -245,9 +272,13 @@ pre {
 	direction: ltr;
 }
 
-:not(pre) > code,
+code,
 kbd {
 	font-size: var(--code-font-size, 0.9em);
+}
+
+:not(pre) > code,
+kbd {
 	white-space: nowrap;
 }
 
@@ -296,4 +327,18 @@ td {
 
 td {
 	max-inline-size: min(66vi, var(--measure, 35ch));
+}
+
+:focus-visible {
+	--_focus-border: 0.125em;
+
+	outline: var(--focus-ring-width, var(--_focus-border)) solid
+		var(--focus-ring-color, currentColor);
+	outline-offset: var(--focus-ring-width, var(--_focus-border));
+}
+
+[disabled],
+[aria-disabled='true'] {
+	opacity: var(--disabled-opacity, 0.37);
+	cursor: not-allowed;
 }
