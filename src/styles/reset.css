@@ -92,6 +92,31 @@ textarea,
 select,
 input[type='file']::-webkit-file-upload-button {
 	font: inherit;
+	letter-spacing: inherit;
+	word-spacing: inherit;
+}
+
+input:not([type='file']),
+button,
+textarea,
+select {
+	border: var(--input-border-width, 0.0625em) var(--input-border-style, solid)
+		var(--input-border-color, currentColor);
+	background: var(--input-bg, inherit);
+}
+
+input:not([type='radio']):not([type='checkbox']):not([type='file']):not(
+		[type='image']
+	):not([type='range']),
+textarea,
+select {
+	padding: var(--input-padding, 0.125lh);
+}
+
+fieldset {
+	border: var(--fieldset-border-width, 0.0625rem)
+		var(--fieldset-border-style, solid)
+		var(--fieldset-border-color, currentColor);
 }
 
 /*——————————————————————————————————————————————————————————————————————————————
@@ -101,14 +126,13 @@ input[type='file']::-webkit-file-upload-button {
 input[type='radio'],
 input[type='checkbox'] {
 	--_input-size: 1em;
+	--input-border-width: 0.0625em;
 
 	appearance: none;
 	position: relative;
 	display: inline-block;
 	inline-size: var(--_input-size);
 	block-size: var(--_input-size);
-	border: 0.0625em var(--input-border-style, solid)
-		var(--input-border-color, currentColor);
 	vertical-align: text-bottom;
 
 	&::before {
@@ -137,22 +161,27 @@ input[type='radio'] {
 input[type='checkbox'] {
 	--_checkbox-border: 0.125em;
 	border-radius: var(--checkbox-border-radius, 0%);
+
+	&:checked {
+		background-color: var(--accent-color, currentColor);
+	}
 }
 
 input[type='checkbox']:indeterminate::before,
 input[type='checkbox'][aria-checked='mixed']::before {
-	border-block-start: var(--_checkbox-border) solid
-		var(--accent-color, currentColor);
 	inline-size: 60%;
 	block-size: 0;
+	border-block-start: var(--_checkbox-border) solid
+		var(--accent-color, currentColor);
 }
 
 input[type='checkbox']:checked::before {
 	border-right: var(--_checkbox-border) solid var(--accent-color, currentColor);
 	border-bottom: var(--_checkbox-border) solid var(--accent-color, currentColor);
-	inline-size: 30%;
-	block-size: 50%;
-	transform: rotate(45deg) translateY(-20%) translateX(-10%);
+	inline-size: 33%;
+	block-size: 66%;
+	border-color: var(--input-bg, canvas);
+	transform: rotate(45deg) translateY(-10%) translateX(-10%);
 }
 
 select,
