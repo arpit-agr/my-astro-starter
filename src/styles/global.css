@@ -4,6 +4,7 @@
 
 html {
 	color-scheme: light dark;
+	/*accent-color: var(--accent-color);*/
 }
 
 body {
