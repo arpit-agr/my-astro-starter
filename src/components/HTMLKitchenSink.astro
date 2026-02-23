@@ -339,39 +339,23 @@ if (i &lt; 10 &amp;&amp; i &gt; 0)
 				<input type="file" id="example-input-file" />
 			</div>
 			<fieldset>
-				<legend>I am legend</legend>
+				<legend>Choose an option</legend>
 				<div>
-					<label>
-						<input
-							type="radio"
-							name="options-radios"
-							id="optionsR-radios1"
-							value="option1"
-							checked
-						/> Option one is this and that&mdash;be sure to include why it's great
-					</label>
-				</div>
-
-				<div>
-					<label>
-						<input
-							type="radio"
-							name="options-radios"
-							id="options-radios2"
-							value="option2"
-						/> Option two can be something else and selecting it will deselect option
-						one
+					<label for="r1">
+						<input type="radio" name="f" id="r1" value="option1" checked />
+						Example
 					</label>
 				</div>
 				<div>
-					<label>
-						<input
-							type="radio"
-							name="optionsRadios"
-							id="options-radios3"
-							value="option3"
-							disabled
-						/> Option three is disabled
+					<label for="r2">
+						<input type="radio" name="f" id="r2" value="option2" />
+						Example 2
+					</label>
+				</div>
+				<div>
+					<label for="r2">
+						<input type="radio" name="f" id="r3" value="option3" disabled />
+						Example 3
 					</label>
 				</div>
 			</fieldset>
@@ -384,6 +368,13 @@ if (i &lt; 10 &amp;&amp; i &gt; 0)
 
 				<input type="checkbox" id="horns" name="horns" />
 				<label for="horns">Horns</label>
+
+				<input
+					type="checkbox"
+					id="indeterminate-checkbox"
+					name="indeterminate-checkbox"
+				/>
+				<label for="indeterminate-checkbox">Indeterminate checkbox</label>
 			</fieldset>
 
 			<div class="cluster">
@@ -395,3 +386,8 @@ if (i &lt; 10 &amp;&amp; i &gt; 0)
 		</form>
 	</section>
 </main>
+
+<script is:inline>
+	const checkbox = document.getElementById('indeterminate-checkbox');
+	checkbox.indeterminate = true;
+</script>
