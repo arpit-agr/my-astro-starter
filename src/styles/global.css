@@ -8,8 +8,8 @@ html {
 }
 
 body {
-	background: var(--bg);
-	color: var(--text);
+	background: var(--bg-color);
+	color: var(--text-color);
 	font-size: var(--text-size);
 	line-height: var(--leading-normal);
 }
@@ -19,7 +19,19 @@ h1 {
 }
 
 a {
-	color: var(--accent-color);
+	color: var(--link-default-color, var(--accent-color));
+
+	&:visited {
+		color: var(--link-visited-color, var(--accent-color));
+	}
+}
+
+button {
+	&:hover {
+		--btn-border-color: var(--btn-bg-hover-color, var(--accent-color));
+		background: var(--btn-bg-hover-color, var(--accent-color));
+		color: var(--btn-text-hover-color, var(--bg-color));
+	}
 }
 
 /*——————————————————————————————————————————————————————————————————————————————
@@ -45,28 +57,28 @@ textarea:user-invalid {
 	background:
 		linear-gradient(
 			to right,
-			var(--bg) 30%,
-			color-mix(in srgb, var(--bg) 0%, #0000)
+			var(--bg-color) 30%,
+			color-mix(in srgb, var(--bg-color) 0%, #0000)
 		),
 		linear-gradient(
 				to right,
-				color-mix(in srgb, var(--bg) 0%, #0000),
-				var(--bg) 70%
+				color-mix(in srgb, var(--bg-color) 0%, #0000),
+				var(--bg-color) 70%
 			)
 			0 100%,
 		radial-gradient(
 			farthest-side at 0% 50%,
-			color-mix(in srgb, var(--text) 20%, #0000),
-			color-mix(in srgb, var(--text) 0%, #0000)
+			color-mix(in srgb, var(--text-color) 20%, #0000),
+			color-mix(in srgb, var(--text-color) 0%, #0000)
 		),
 		radial-gradient(
 				farthest-side at 100% 50%,
-				color-mix(in srgb, var(--text) 20%, #0000),
-				color-mix(in srgb, var(--text) 0%, #0000)
+				color-mix(in srgb, var(--text-color) 20%, #0000),
+				color-mix(in srgb, var(--text-color) 0%, #0000)
 			)
 			0 100%;
 	background-repeat: no-repeat;
-	background-color: var(--bg);
+	background-color: var(--bg-color);
 	background-size:
 		40px 100%,
 		40px 100%,
@@ -82,11 +94,15 @@ textarea:user-invalid {
 
 th {
 	@media not (forced-colors: active) {
-		background-color: color-mix(in srgb, var(--text) 80%, var(--bg));
-		color: var(--bg);
+		background-color: color-mix(
+			in srgb,
+			var(--text-color) 80%,
+			var(--bg-color)
+		);
+		color: var(--bg-color);
 	}
 }
 
 tr:nth-child(even) {
-	background-color: color-mix(in srgb, var(--text) 8%, #0000);
+	background-color: color-mix(in srgb, var(--text-color) 8%, #0000);
 }
