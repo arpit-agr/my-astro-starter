@@ -1,8 +1,11 @@
 :root {
 	--text-size: clamp(1rem, 0.9489rem + 0.2273vw, 1.125rem); /* 16px — 18px */
 
-	--bg: canvas;
-	--text: canvasText;
+	--bg-color: canvas;
+	--text-color: canvasText;
+	--accent-color: light-dark(blue, lightblue);
+	--link-default-color: var(--accent-color);
+	--link-visited-color: oklch(from var(--link-default-color) l c 303.38);
 
 	--leading-tight: 1.1;
 	--leading-snug: 1.3;
