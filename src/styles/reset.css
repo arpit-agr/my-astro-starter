@@ -85,7 +85,7 @@ button,
 [type='submit'],
 [type='reset'] {
 	border: var(--btn-border-width, 0.0625em) var(--btn-border-style, solid)
-		var(--btn-border-color, currentColor);
+		var(--btn-border-color, transparent);
 	transition: scale 50ms ease-in;
 
 	&:active {
@@ -104,17 +104,11 @@ input[type='file']::-webkit-file-upload-button {
 }
 
 input:not([type='file']),
-button,
-textarea,
-select {
-	background: var(--control-bg, inherit);
-}
-
-input:not([type='file']),
 textarea,
 select {
 	border: var(--control-border-width, 0.0625em)
 		var(--control-border-style, solid) var(--control-border-color, currentColor);
+	background: var(--control-bg, inherit);
 }
 
 input:not([type='radio']):not([type='checkbox']):not([type='file']):not(
