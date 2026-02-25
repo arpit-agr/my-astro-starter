@@ -71,7 +71,7 @@ a {
 	--_underline-thickness: 0.1em;
 
 	text-decoration-thickness: var(--_underline-thickness);
-	text-underline-offset: 25%;
+	text-underline-offset: 27%;
 	text-decoration-color: oklch(from currentColor l c h / 0.75);
 
 	&:hover {
