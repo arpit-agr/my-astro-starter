@@ -84,9 +84,11 @@ a {
 button,
 [type='button'],
 [type='submit'],
-[type='reset'] {
+[type='reset'],
+::file-selector-button {
 	border: var(--btn-border-width, 0.0625em) var(--btn-border-style, solid)
 		var(--btn-border-color, transparent);
+	border-radius: var(--btn-border-radius, var(--border-radius, 0.25em));
 	transition: scale 50ms ease-in;
 
 	&:active {
@@ -97,11 +99,11 @@ button,
 input,
 button,
 textarea,
-select,
-input[type='file']::-webkit-file-upload-button {
+select {
 	font: inherit;
 	letter-spacing: inherit;
 	word-spacing: inherit;
+	border-radius: var(--control-border-radius, var(--border-radius, 0.25em));
 }
 
 input:not([type='file']),
@@ -124,6 +126,7 @@ fieldset {
 	border: var(--fieldset-border-width, 0.0625rem)
 		var(--fieldset-border-style, solid)
 		var(--fieldset-border-color, currentColor);
+	border-radius: var(--fieldset-border-radius, var(--border-radius, 0.25em));
 }
 
 /*——————————————————————————————————————————————————————————————————————————————
@@ -151,7 +154,7 @@ input[type='checkbox'] {
 }
 
 input[type='radio'] {
-	border-radius: 100%;
+	--control-border-radius: 100%;
 
 	&::before {
 		inline-size: 0;
@@ -160,14 +163,13 @@ input[type='radio'] {
 
 	&:checked::before {
 		border: 0.3125em solid transparent;
-		border-radius: 100%;
+		border-radius: inherit;
 		background: var(--accent-color, currentColor);
 	}
 }
 
 input[type='checkbox'] {
 	--_checkbox-border: 0.125em;
-	border-radius: var(--checkbox-border-radius, 0%);
 
 	&:checked {
 		background-color: var(--accent-color, currentColor);
@@ -302,6 +304,7 @@ pre {
 
 	outline: var(--pre-border-width, 0.0625rem) var(--pre-border-style, solid)
 		var(--pre-border-color, currentColor);
+	border-radius: var(--pre-border-radius, var(--border-radius, 0.25em));
 
 	tab-size: var(--tab-size, 2);
 	white-space: pre;
@@ -312,6 +315,7 @@ pre {
 
 code,
 kbd {
+	border-radius: var(--code-border-radius, var(--border-radius, 0.25em));
 	font-size: var(--code-font-size, 0.9em);
 }
 
@@ -320,13 +324,13 @@ kbd {
 	white-space: nowrap;
 }
 
-:not(pre) > code {
+/*:not(pre) > code {
 	padding: var(--code-padding, 0.125lh);
 	background-color: var(
 		--code-bg,
-		color-mix(in oklch, currentColor 8%, transparent)
+		color-mix(in oklch, currentColor 4%, transparent)
 	);
-}
+}*/
 
 /*——————————————————————————————————————————————————————————————————————————————
 	Under-Engineered Responsive Tables
@@ -337,6 +341,7 @@ kbd {
 	max-inline-size: 100%;
 	border: var(--table-border-width, 0.0625rem) var(--table-border-style, solid)
 		var(--table-border-color, currentColor);
+	border-radius: var(--table-border-radius, var(--border-radius, 0.25em));
 	overflow: auto;
 }
 
