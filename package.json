@@ -3,8 +3,8 @@
 	"type": "module",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "astro dev",
-		"build": "astro build",
+		"dev": "concurrently \"astro dev\" \"sugarcube generate --watch\"",
+		"build": "sugarcube generate && astro build",
 		"preview": "astro preview",
 		"astro": "astro"
 	},
@@ -12,6 +12,8 @@
 		"astro": "^5.17.1"
 	},
 	"devDependencies": {
+		"@sugarcube-sh/cli": "^0.0.4",
+		"concurrently": "^9.2.1",
 		"prettier": "^3.8.1",
 		"prettier-plugin-astro": "^0.14.1"
 	}
