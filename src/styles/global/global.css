@@ -183,23 +183,15 @@ a code {
    Lists
    ============================================ */
 
-ul,
-ol {
-	padding: 0;
+ol[role='list'],
+ul[role='list'] {
+	list-style: none;
+	padding-inline-start: 0; /* Browsers default padding-inline-start: 40px */
 }
 
 li > ul,
 li > ol {
 	margin-inline-start: 0.25em;
-}
-
-ul {
-	list-style: disc;
-}
-
-li {
-	margin-inline-start: 1.25em;
-	padding: 0;
 }
 
 dt {
