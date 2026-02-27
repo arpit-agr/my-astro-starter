@@ -1,0 +1,39 @@
+/*——————————————————————————————————————————————————————————————————————————————
+	Under-Engineered Responsive Tables
+	https://adrianroselli.com/2020/11/under-engineered-responsive-tables.html
+——————————————————————————————————————————————————————————————————————————————*/
+[role='region'][aria-labelledby][tabindex] {
+	inline-size: fit-content;
+	max-inline-size: 100%;
+	border: var(--table-border-width, 0.0625rem) var(--table-border-style, solid)
+		var(--table-border-color, currentColor);
+	border-radius: var(--table-border-radius, var(--border-radius, 0.25em));
+	overflow: auto;
+}
+
+table {
+	inline-size: max-content;
+	border-collapse: collapse;
+}
+
+caption,
+th,
+td {
+	padding: var(--table-cell-padding, 0.25lh);
+	text-align: start;
+}
+
+caption {
+	position: sticky;
+	inset-inline-start: 0;
+	max-inline-size: fit-content;
+}
+
+th,
+td {
+	vertical-align: text-top;
+}
+
+td {
+	max-inline-size: min(66vi, var(--measure, 35ch));
+}
