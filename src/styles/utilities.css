@@ -1,9 +1,0 @@
-.wrapper {
-	margin-inline: auto;
-	padding-inline: var(--gutter, 1lh);
-	max-inline-size: var(--wrapper-max-width, 80rem);
-}
-
-.region {
-	padding-block: var(--region-space, 1lh);
-}

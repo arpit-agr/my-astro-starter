@@ -1,7 +1,18 @@
-@layer reset, theme, global, composition, blocks, utilities, exceptions;
+@layer global, compositions, blocks, utilities, exceptions;
 
-@import url(reset.css) layer(reset);
-@import url(theme.css) layer(theme);
-@import url(global.css) layer(global);
-@import url(composition.css) layer(composition);
-@import url(utilities.css) layer(utilities);
+@import url(global/tokens.variables.gen.css) layer(global);
+@import url(global/global.css) layer(global);
+@import url(compositions/cluster.css) layer(compositions);
+@import url(compositions/flow.css) layer(compositions);
+@import url(compositions/grid.css) layer(compositions);
+@import url(compositions/repel.css) layer(compositions);
+@import url(compositions/sidebar.css) layer(compositions);
+@import url(compositions/switcher.css) layer(compositions);
+@import url(compositions/wrapper.css) layer(compositions);
+@import url(blocks/prose.css) layer(blocks);
+@import url(blocks/button/button.css) layer(blocks);
+@import url(blocks/input/input.css) layer(blocks);
+@import url(blocks/table.css) layer(blocks);
+@import url(utilities/region.css) layer(utilities);
+@import url(utilities/utilities.gen.css) layer(utilities);
+@import url(utilities/visually-hidden.css) layer(utilities);
