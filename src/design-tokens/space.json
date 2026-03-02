@@ -1,6 +1,18 @@
 {
 	"space": {
 		"$type": "fluidDimension",
+		"4xs": {
+			"$value": {
+				"min": {
+					"value": 0.125,
+					"unit": "rem"
+				},
+				"max": {
+					"value": 0.125,
+					"unit": "rem"
+				}
+			}
+		},
 		"3xs": {
 			"$value": {
 				"min": {
@@ -109,6 +121,18 @@
 				}
 			}
 		},
+		"4xs-3xs": {
+			"$value": {
+				"min": {
+					"value": 0.125,
+					"unit": "rem"
+				},
+				"max": {
+					"value": 0.3125,
+					"unit": "rem"
+				}
+			}
+		},
 		"3xs-2xs": {
 			"$value": {
 				"min": {
@@ -213,18 +237,6 @@
 				},
 				"max": {
 					"value": 2.25,
-					"unit": "rem"
-				}
-			}
-		},
-		"s-xl": {
-			"$value": {
-				"min": {
-					"value": 1,
-					"unit": "rem"
-				},
-				"max": {
-					"value": 3.375,
 					"unit": "rem"
 				}
 			}

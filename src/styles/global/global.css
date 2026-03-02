@@ -197,6 +197,7 @@ button,
 	)
 ),
 label[for],
+label:has(input),
 select,
 summary,
 [tabindex]:not([tabindex*='-'], pre),
@@ -254,11 +255,18 @@ button,
 [type='submit'],
 [type='reset'],
 ::file-selector-button {
+	padding: 0.25em 0.125em;
 	border: var(--border-width-thin, 1px) var(--border-style, solid)
 		var(--color-border-button, transparent);
 	border-radius: var(--radius-button, 0.25rem);
 	transition: scale var(--transition-fast, 75ms)
 		var(--ease-in, cubic-bezier(0.4, 0, 1, 1));
+	color: inherit;
+
+	@supports (text-box: trim-both cap alphabetic) {
+		text-box: trim-both cap alphabetic;
+		padding: 0.5em;
+	}
 
 	&:active {
 		scale: 0.98;
@@ -310,6 +318,7 @@ button,
 textarea,
 select {
 	font: inherit;
+	color: inherit;
 	letter-spacing: inherit;
 	word-spacing: inherit;
 }

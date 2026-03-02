@@ -26,7 +26,7 @@
 	},
 	"flow-space": {
 		"$type": "fluidDimension",
-		"$value": "{space.s-m}",
+		"$value": "{space.m}",
 		"$description": "Base vertical spacing in flow composition"
 	},
 	"region-space": {
