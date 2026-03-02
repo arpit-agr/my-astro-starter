@@ -255,7 +255,7 @@ button,
 [type='submit'],
 [type='reset'],
 ::file-selector-button {
-	padding: 0.25em 0.125em;
+	padding: 0.25em 0.375em;
 	border: var(--border-width-thin, 1px) var(--border-style, solid)
 		var(--color-border-button, transparent);
 	border-radius: var(--radius-button, 0.25rem);
