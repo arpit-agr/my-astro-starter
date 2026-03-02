@@ -24,7 +24,7 @@
 		},
 		{
 			"type": "modifier",
-			"name": "mode",
+			"name": "theme",
 			"default": "light",
 			"contexts": {
 				"light": [],

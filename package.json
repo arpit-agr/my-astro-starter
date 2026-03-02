@@ -3,8 +3,8 @@
 	"type": "module",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "concurrently \"astro dev\" \"sugarcube generate --watch\"",
-		"build": "sugarcube generate && astro build",
+		"dev": "concurrently \"astro dev --host\" \"sugarcube generate --watch\"",
+		"build": "sugarcube generate && sugarcube validate && astro build",
 		"preview": "astro preview",
 		"astro": "astro"
 	},

@@ -5,9 +5,10 @@
 [role='region'][aria-labelledby][tabindex] {
 	inline-size: fit-content;
 	max-inline-size: 100%;
-	border: var(--table-border-width, 0.0625rem) var(--table-border-style, solid)
-		var(--table-border-color, currentColor);
-	border-radius: var(--table-border-radius, var(--border-radius, 0.25em));
+	border: var(--border-width-thin, 1px) var(--border-style, solid)
+		var(--color-surface-border, currentColor);
+	border-radius: var(--radius-m, 0.25em);
+	font-size: max(1rem, var(--size-step--1));
 	overflow: auto;
 }
 
@@ -19,7 +20,7 @@ table {
 caption,
 th,
 td {
-	padding: var(--table-cell-padding, 0.25lh);
+	padding: var(--space-2xs, 0.5rem);
 	text-align: start;
 }
 
@@ -34,6 +35,72 @@ td {
 	vertical-align: text-top;
 }
 
+th {
+	font-weight: var(--font-weight-bold, bold);
+	line-height: var(--leading-tight, 1.1);
+}
+
 td {
-	max-inline-size: min(66vi, var(--measure, 35ch));
+	max-inline-size: min(66vi, var(--measure, 25ch));
+}
+
+/*——————————————————————————————————————————————————————————————————————————————
+ scrolling shadows to offer a visual cue
+——————————————————————————————————————————————————————————————————————————————*/
+[role='region'][aria-labelledby][tabindex] {
+	background:
+		linear-gradient(
+			to right,
+			var(--color-surface-default, canvas) 30%,
+			color-mix(in srgb, var(--color-surface-default, canvas) 0%, #0000)
+		),
+		linear-gradient(
+				to right,
+				color-mix(in srgb, var(--color-surface-default, canvas) 0%, #0000),
+				var(--color-surface-default, canvas) 70%
+			)
+			0 100%,
+		radial-gradient(
+			farthest-side at 0% 50%,
+			color-mix(in srgb, var(--color-text-normal, canvasText) 20%, #0000),
+			color-mix(in srgb, var(--color-text-normal, canvasText) 0%, #0000)
+		),
+		radial-gradient(
+				farthest-side at 100% 50%,
+				color-mix(in srgb, var(--color-text-normal, canvasText) 20%, #0000),
+				color-mix(in srgb, var(--color-text-normal, canvasText) 0%, #0000)
+			)
+			0 100%;
+	background-repeat: no-repeat;
+	background-color: var(--color-surface-default, canvas);
+	background-size:
+		40px 100%,
+		40px 100%,
+		14px 100%,
+		14px 100%;
+	background-position:
+		0 0,
+		100%,
+		0 0,
+		100%;
+	background-attachment: local, local, scroll, scroll;
+}
+
+th {
+	@media not (forced-colors: active) {
+		background-color: color-mix(
+			in srgb,
+			var(--color-text-normal, canvasText) 90%,
+			var(--color-surface-default, canvas)
+		);
+		color: var(--color-surface-default, canvas);
+	}
+}
+
+tr:nth-child(even) {
+	background-color: color-mix(
+		in srgb,
+		var(--color-text-normal, canvasText) 4%,
+		#0000
+	);
 }

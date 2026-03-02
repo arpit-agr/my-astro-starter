@@ -5,16 +5,32 @@ export default defineConfig({
 	output: {
 		components: 'src/styles/blocks',
 	},
+	transforms: {
+		fluid: {
+			min: 320,
+			max: 1200,
+		},
+	},
 	utilities: {
+		color: {
+			source: 'color.*',
+			prefix: 'text',
+			stripLevels: 1,
+		},
+		'background-color': {
+			source: 'color.*',
+			prefix: 'bg',
+			stripLevels: 1,
+		},
 		padding: {
 			source: 'space.*',
 			prefix: 'p',
-			directions: ['all', 'top', 'right', 'bottom', 'left', 'x', 'y'],
+			directions: ['top', 'right', 'bottom', 'left', 'x', 'y', 'full', 'all'],
 		},
 		margin: {
 			source: 'space.*',
 			prefix: 'm',
-			directions: ['all', 'top', 'right', 'bottom', 'left', 'x', 'y'],
+			directions: ['top', 'right', 'bottom', 'left', 'x', 'y', 'full', 'all'],
 		},
 		'--flow-space': {
 			source: 'space.*',

@@ -1,10 +1,10 @@
+---
+import Blockquote from '@components/Blockquote.astro';
+---
+
 <main class="flow wrapper region region-space-m">
 	<section class="flow">
-		<hgroup class="flow">
-			<h1>h1 HTML5 Kitchen Sink</h1>
-			<p>Modified version of HTML5 Kitchen sink by @dbox (via Chris Coyier)</p>
-		</hgroup>
-		<hr />
+		<h1>h1 HTML5 Kitchen Sink</h1>
 		<h2>h2 HTML5 Kitchen Sink</h2>
 		<h3>h3 HTML5 Kitchen Sink</h3>
 		<h4>h4 HTML5 Kitchen Sink</h4>
@@ -14,14 +14,18 @@
 	<hr />
 	<section class="flow">
 		<header>
-			<nav>
-				<ul class="cluster" role="list">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Contact</a></li>
-				</ul>
-			</nav>
+			<details>
+				<summary>Table of contents</summary>
+				<nav>
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</nav>
+			</details>
 		</header>
+		<hr />
 		<article class="flow">
 			<p>
 				This paragraph is nested inside an article. It contains many different,
@@ -42,7 +46,14 @@
 					>2</sub
 				>O) and sup (E = MC<sup>2</sup>) tags.
 			</p>
-			<blockquote>
+			<div>
+				<button command="show-modal" commandfor="my-dialog">Open dialog</button>
+				<dialog id="my-dialog" class="flow">
+					<p>This dialog was opened using an invoker command.</p>
+					<button commandfor="my-dialog" command="close">Close</button>
+				</dialog>
+			</div>
+			<Blockquote>
 				<p>
 					This is a mult-line blockquote with a cite reference. People think
 					focus means saying yes to the thing you’ve got to focus on. But that’s
@@ -51,8 +62,11 @@
 					proud of the things we haven’tdone as the things I have done.
 					Innovation is saying no to 1,000 things.
 				</p>
-				<cite>Steve Jobs – Apple Worldwide Developers’ Conference, 1997</cite>
-			</blockquote>
+				<Fragment slot="author">Steve Jobs</Fragment>
+				<Fragment slot="citation">
+					Apple Worldwide Developers’ Conference, 1997
+				</Fragment>
+			</Blockquote>
 			<pre><code>let i = 5;
 if (i &lt; 10 &amp;&amp; i &gt; 0)
   return &quot;Single Digit Number&quot;
@@ -90,10 +104,7 @@ if (i &lt; 10 &amp;&amp; i &gt; 0)
 				</tr>
 				<tr>
 					<td>Sir Isaac Newton</td>
-					<td
-						>The Method of Fluxions and Infinite Series: With Its Application to
-						the Geometry of Curve-lines</td
-					>
+					<td>The Method of Fluxions and Infinite Series</td>
 					<td>1763</td>
 					<td>9781330454862</td>
 					<td>1330454863</td>
@@ -225,7 +236,7 @@ if (i &lt; 10 &amp;&amp; i &gt; 0)
 	</section>
 	<hr />
 
-	<figure class="flow">
+	<figure>
 		<img src="https://picsum.photos/id/237/200/" />
 		<figcaption>Fig1. A picture of a black dog</figcaption>
 	</figure>
@@ -288,6 +299,22 @@ if (i &lt; 10 &amp;&amp; i &gt; 0)
 				/>
 			</div>
 			<div>
+				<label for="volume">Volume</label>
+				<input type="range" id="volume" name="volume" min="0" max="11" />
+			</div>
+			<div>
+				<label for="cowbell">Cowbell</label>
+				<input
+					type="range"
+					id="cowbell"
+					name="cowbell"
+					min="0"
+					max="100"
+					value="90"
+					step="10"
+				/>
+			</div>
+			<div>
 				<label for="example-input-color">Color</label>
 				<input type="color" id="example-input-color" />
 			</div>
@@ -336,7 +363,11 @@ if (i &lt; 10 &amp;&amp; i &gt; 0)
 				<textarea id="example-textarea"></textarea>
 			</div>
 			<div>
-				<label class="sidebar" for="example-input-file">File input</label>
+				<label
+					style="--sidebar-content-min-width: auto;"
+					class="sidebar"
+					for="example-input-file">File input</label
+				>
 				<input type="file" id="example-input-file" />
 			</div>
 			<fieldset>
@@ -362,20 +393,52 @@ if (i &lt; 10 &amp;&amp; i &gt; 0)
 			</fieldset>
 
 			<fieldset>
-				<legend>Choose your monster's features:</legend>
-
-				<input type="checkbox" id="scales" name="scales" checked />
-				<label for="scales">Scales</label>
-
-				<input type="checkbox" id="horns" name="horns" />
-				<label for="horns">Horns</label>
-
-				<input
-					type="checkbox"
-					id="indeterminate-checkbox"
-					name="indeterminate-checkbox"
-				/>
-				<label for="indeterminate-checkbox">Indeterminate checkbox</label>
+				<legend>Choose your interests</legend>
+				<div>
+					<label>
+						<input type="checkbox" id="coding" name="interest" value="coding" />
+						Coding
+					</label>
+				</div>
+				<div>
+					<label>
+						<input type="checkbox" id="music" name="interest" value="music" />
+						Music
+					</label>
+				</div>
+				<div>
+					<label>
+						<input type="checkbox" id="art" name="interest" value="art" />
+						Art
+					</label>
+				</div>
+				<div>
+					<label>
+						<input type="checkbox" id="sports" name="interest" value="sports" />
+						Sports
+					</label>
+				</div>
+				<div>
+					<label>
+						<input
+							type="checkbox"
+							id="cooking"
+							name="interest"
+							value="cooking"
+						/>
+						Cooking
+					</label>
+				</div>
+				<div>
+					<label for="indeterminate-checkbox">
+						<input
+							type="checkbox"
+							id="indeterminate-checkbox"
+							name="indeterminate-checkbox"
+						/>
+						Indeterminate checkbox
+					</label>
+				</div>
 			</fieldset>
 
 			<button>Button</button>

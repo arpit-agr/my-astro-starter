@@ -16,14 +16,14 @@
 			"$value": "{color.border.normal}"
 		},
 		"border-radius": {
-			"$value": "{radius.l}"
+			"$value": "{radius.m}"
 		},
 		"line-height": {
 			"$type": "number",
 			"$value": "{leading.normal}"
 		},
 		"font-size": {
-			"$value": "{text.s}"
+			"$value": "{size.step.0}"
 		},
 		"placeholder-color": {
 			"$type": "color",
@@ -37,7 +37,6 @@
 			"$value": "{color.text.normal}"
 		},
 		"label": {
-			"color": { "$value": "{color.text.normal}" },
 			"line-height": { "$value": "{leading.tight}" }
 		}
 	}

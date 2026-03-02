@@ -34,7 +34,7 @@
 				"$value": "{color.neutral.500}"
 			},
 			"link": {
-				"$value": "{color.neutral.950}"
+				"$value": "{color.pink.600}"
 			}
 		},
 
@@ -61,6 +61,9 @@
 			}
 		},
 		"border": {
+			"button": {
+				"$value": "{color.transparent}"
+			},
 			"quiet": {
 				"$value": "{color.neutral.border.quiet}"
 			},

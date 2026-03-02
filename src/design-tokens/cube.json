@@ -26,12 +26,12 @@
 	},
 	"flow-space": {
 		"$type": "fluidDimension",
-		"$value": "{space.m}",
+		"$value": "{space.s-m}",
 		"$description": "Base vertical spacing in flow composition"
 	},
 	"region-space": {
 		"$type": "fluidDimension",
-		"$value": "{space.xl}",
+		"$value": "{space.m}",
 		"$description": "Base vertical padding for page sections"
 	},
 	"wrapper-max-width": {
@@ -41,12 +41,12 @@
 	},
 	"wrapper-padding-inline": {
 		"$type": "fluidDimension",
-		"$value": "{space.s}",
+		"$value": "{space.m}",
 		"$description": "Inline padding for wrapper composition"
 	},
 	"sidebar-content-min-width": {
 		"$type": "dimension",
-		"$value": { "value": 37.5, "unit": "rem" },
+		"$value": { "value": 16, "unit": "rem" },
 		"$description": "Min width for sidebar content"
 	}
 }

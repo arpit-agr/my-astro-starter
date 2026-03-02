@@ -1,0 +1,20 @@
+<figure>
+	<blockquote>
+		<slot />
+	</blockquote>
+	{
+		Astro.slots.has('author') && (
+			<figcaption>
+				<slot name="author" />
+				{Astro.slots.has('citation') && (
+					<Fragment>
+						-
+						<cite>
+							<slot name="citation" />
+						</cite>
+					</Fragment>
+				)}
+			</figcaption>
+		)
+	}
+</figure>

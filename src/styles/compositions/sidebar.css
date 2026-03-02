@@ -20,11 +20,11 @@ between the sidebar and main content.
 	display: flex;
 	flex-wrap: wrap;
 	gap: var(--sidebar-gap, 1rem);
-	align-items: var(--align, flex-start);
+	align-items: var(--sidebar-vertical-alignment, flex-start);
 }
 
 .sidebar {
-	flex-basis: var(--sidebar-size, 20rem);
+	flex-basis: var(--sidebar-content-min-width, 20rem);
 	flex-grow: 1;
 }
 
