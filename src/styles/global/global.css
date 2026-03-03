@@ -572,7 +572,7 @@ figcaption {
 	font-family: var(--font-mono, monospace);
 
 	:where(img, blockquote) + & {
-		margin-block-start: var(--space-2xs);
+		margin-block-start: var(--space-2xs, 0.5rem);
 	}
 }
 
