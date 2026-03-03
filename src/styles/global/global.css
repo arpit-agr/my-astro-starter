@@ -49,8 +49,8 @@ html {
 
 body {
 	min-height: 100%;
-	color: var(--color-text-normal, canvasText);
 	background: var(--color-surface-default, canvas);
+	color: var(--color-text-normal, canvasText);
 	font-size: var(--size-step-0, 1rem);
 	font-family: var(--font-body, system-ui, sans-serif);
 	line-height: var(--leading-normal, 1.5);
