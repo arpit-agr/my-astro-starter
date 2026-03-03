@@ -4,7 +4,7 @@
 
 		"surface": {
 			"default": {
-				"$value": "{color.white}"
+				"$value": "{color.neutral.50}"
 			},
 			"raised": {
 				"$value": "{color.white}"
@@ -17,6 +17,9 @@
 			},
 			"border": {
 				"$value": "{color.neutral.200}"
+			},
+			"inverted": {
+				"$value": "{color.neutral.950}"
 			}
 		},
 
@@ -35,6 +38,9 @@
 			},
 			"link": {
 				"$value": "{color.pink.600}"
+			},
+			"inverted": {
+				"$value": "{color.neutral.50}"
 			}
 		},
 

@@ -88,12 +88,8 @@ td {
 
 th {
 	@media not (forced-colors: active) {
-		background-color: color-mix(
-			in srgb,
-			var(--color-text-normal, canvasText) 90%,
-			var(--color-surface-default, canvas)
-		);
-		color: var(--color-surface-default, canvas);
+		background: var(--color-surface-inverted, CanvasText);
+		color: var(--color-text-inverted, Canvas);
 	}
 }
 

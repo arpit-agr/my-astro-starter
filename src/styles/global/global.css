@@ -512,8 +512,8 @@ pre {
 }
 
 pre:has(code) {
-	background: CanvasText;
-	color: Canvas;
+	background: var(--color-surface-inverted, CanvasText);
+	color: var(--color-text-inverted, Canvas);
 }
 
 pre code {
