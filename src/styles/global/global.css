@@ -26,7 +26,7 @@
    ============================================ */
 
 :root {
-	@supports (interpolate-size: allow-keywords) {
+	@media (prefers-reduced-motion: no-preference) {
 		interpolate-size: allow-keywords;
 	}
 }
@@ -37,10 +37,7 @@ html {
 	-moz-text-size-adjust: none;
 	-webkit-text-size-adjust: none;
 	text-size-adjust: none;
-
-	@media (prefers-reduced-motion: no-preference) {
-		scroll-behavior: smooth;
-	}
+	scroll-behavior: smooth;
 }
 
 /* ============================================
@@ -604,8 +601,21 @@ svg[role='img'] {
    Details & Summary
    ============================================ */
 
+details::details-content {
+	block-size: 0;
+	opacity: 0;
+	overflow-y: clip;
+	transition:
+		content-visibility var(--transition-slow, 200ms) allow-discrete,
+		margin-block-start var(--transition-slow, 200ms),
+		block-size var(--transition-slow, 200ms),
+		opacity var(--transition-slow, 200ms);
+}
+
 details[open]::details-content {
 	margin-block-start: var(--space-xs, 0.75rem);
+	block-size: auto;
+	opacity: 1;
 }
 
 /* ============================================
