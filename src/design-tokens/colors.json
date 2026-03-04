@@ -37,7 +37,7 @@
 				"$value": "{color.neutral.500}"
 			},
 			"link": {
-				"$value": "{color.pink.600}"
+				"$value": "{color.pink.700}"
 			},
 			"inverted": {
 				"$value": "{color.neutral.50}"
