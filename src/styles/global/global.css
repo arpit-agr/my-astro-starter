@@ -256,9 +256,10 @@ button,
 	border: var(--border-width-thin, 1px) var(--border-style, solid)
 		var(--color-border-button, transparent);
 	border-radius: var(--radius-button, 0.25rem);
+	background: var(--color-surface-lowest, ButtonFace);
+
 	transition: scale var(--transition-fast, 75ms)
 		var(--ease-in, cubic-bezier(0.4, 0, 1, 1));
-	color: inherit;
 
 	@supports (text-box: trim-both cap alphabetic) {
 		text-box: trim-both cap alphabetic;
