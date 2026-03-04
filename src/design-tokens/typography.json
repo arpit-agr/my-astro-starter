@@ -40,9 +40,7 @@
 	},
 	"leading": {
 		"$type": "number",
-		"title": {
-			"$value": "{leading.tight}"
-		},
+		"title": { "$value": "{leading.tight}" },
 		"none": { "$value": 1.05 },
 		"tight": { "$value": 1.25 },
 		"normal": { "$value": 1.5 },
