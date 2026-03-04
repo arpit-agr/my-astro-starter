@@ -46,13 +46,10 @@ import Blockquote from '@components/Blockquote.astro';
 					>2</sub
 				>O) and sup (E = MC<sup>2</sup>) tags.
 			</p>
-			<div>
-				<button command="show-modal" commandfor="my-dialog">Open dialog</button>
-				<dialog id="my-dialog" class="flow">
-					<p>This dialog was opened using an invoker command.</p>
-					<button commandfor="my-dialog" command="close">Close</button>
-				</dialog>
-			</div>
+			<pre><code>let i = 5;
+if (i &lt; 10 &amp;&amp; i &gt; 0)
+  return &quot;Single Digit Number&quot;
+</code></pre>
 			<Blockquote>
 				<p>
 					This is a mult-line blockquote with a cite reference. People think
@@ -67,10 +64,13 @@ import Blockquote from '@components/Blockquote.astro';
 					Apple Worldwide Developers’ Conference, 1997
 				</Fragment>
 			</Blockquote>
-			<pre><code>let i = 5;
-if (i &lt; 10 &amp;&amp; i &gt; 0)
-  return &quot;Single Digit Number&quot;
-</code></pre>
+			<div>
+				<button command="show-modal" commandfor="my-dialog">Open dialog</button>
+				<dialog id="my-dialog" class="flow">
+					<p>This dialog was opened using an invoker command.</p>
+					<button commandfor="my-dialog" command="close">Close</button>
+				</dialog>
+			</div>
 		</article>
 		<aside>This is an aside.</aside>
 		<footer>This is footer for this section</footer>
