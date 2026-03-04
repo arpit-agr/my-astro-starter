@@ -10,18 +10,9 @@ export default defineConfig({
 			min: 320,
 			max: 1200,
 		},
+		colorFallbackStrategy: 'polyfill',
 	},
 	utilities: {
-		color: {
-			source: 'color.*',
-			prefix: 'text',
-			stripLevels: 1,
-		},
-		'background-color': {
-			source: 'color.*',
-			prefix: 'bg',
-			stripLevels: 1,
-		},
 		padding: {
 			source: 'space.*',
 			prefix: 'p',
