@@ -10,7 +10,6 @@
 @import url(compositions/switcher.css) layer(compositions);
 @import url(compositions/wrapper.css) layer(compositions);
 @import url(blocks/prose.css) layer(blocks);
-@import url(blocks/table.css) layer(blocks);
 @import url(utilities/region.css) layer(utilities);
 @import url(utilities/utilities.gen.css) layer(utilities);
 @import url(utilities/visually-hidden.css) layer(utilities);

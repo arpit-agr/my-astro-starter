@@ -261,7 +261,7 @@ label {
 
 /* Font weight for labels that aren't checkbox/radio */
 label:not(:has(input[type='checkbox'])):not(:has(input[type='radio'])) {
-	font-weight: var(--font-weight-medium);
+	font-weight: var(--font-weight-medium, 500);
 }
 
 /* Full width for labels containing text inputs/textareas/selects */
@@ -297,7 +297,7 @@ input[type='checkbox'],
 input[type='radio'],
 input[type='range'],
 progress {
-	accent-color: var(--color-accent-fill-loud);
+	accent-color: var(--color-accent-fill-loud, LinkText);
 }
 
 /* Checkbox/Radio alignment with labels */
@@ -328,7 +328,7 @@ input[type='radio'] {
 	inline-size: var(--form-control-toggle-size, 1.125rem);
 	block-size: var(--form-control-toggle-size, 1.125rem);
 	margin-inline-end: 0.5em;
-	box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+	box-shadow: var(--shadow-xs, 0 1px 2px 0 rgb(0 0 0 / 0.05));
 }
 
 input[type='checkbox'] {
@@ -471,7 +471,7 @@ button,
 		var(--button-border-color, transparent);
 	border-radius: var(--button-border-radius, 0.25rem);
 	background: var(--button-color-surface, ButtonFace);
-	color: var(--button-color-text);
+	color: var(--button-color-text, canvasText);
 
 	transition: scale var(--transition-fast, 75ms)
 		var(--ease-in, cubic-bezier(0.4, 0, 1, 1));
@@ -643,6 +643,103 @@ dialog {
 dialog:modal::backdrop {
 	background-color: var(--color-overlay, rgba(0, 0, 0, 0.5));
 	backdrop-filter: blur(4px);
+}
+
+/* ============================================
+   Table
+   https://adrianroselli.com/2020/11/under-engineered-responsive-tables.html
+   ============================================ */
+
+[role='region'][aria-labelledby][tabindex]:has(> table) {
+	inline-size: fit-content;
+	max-inline-size: 100%;
+	border: var(--border-width-thin, 1px) var(--border-style, solid)
+		var(--color-surface-border, currentColor);
+	border-radius: var(--radius-m, 0.25em);
+	font-size: max(1rem, var(--size-step--1));
+	overflow: auto;
+
+	background:
+		linear-gradient(
+			to right,
+			var(--color-surface-default, canvas) 30%,
+			color-mix(in srgb, var(--color-surface-default, canvas) 0%, #0000)
+		),
+		linear-gradient(
+				to right,
+				color-mix(in srgb, var(--color-surface-default, canvas) 0%, #0000),
+				var(--color-surface-default, canvas) 70%
+			)
+			0 100%,
+		radial-gradient(
+			farthest-side at 0% 50%,
+			color-mix(in srgb, var(--color-text-normal, canvasText) 20%, #0000),
+			color-mix(in srgb, var(--color-text-normal, canvasText) 0%, #0000)
+		),
+		radial-gradient(
+				farthest-side at 100% 50%,
+				color-mix(in srgb, var(--color-text-normal, canvasText) 20%, #0000),
+				color-mix(in srgb, var(--color-text-normal, canvasText) 0%, #0000)
+			)
+			0 100%;
+	background-repeat: no-repeat;
+	background-color: var(--color-surface-default, canvas);
+	background-size:
+		40px 100%,
+		40px 100%,
+		14px 100%,
+		14px 100%;
+	background-position:
+		0 0,
+		100%,
+		0 0,
+		100%;
+	background-attachment: local, local, scroll, scroll;
+}
+
+table {
+	inline-size: max-content;
+	border-collapse: collapse;
+}
+
+caption,
+th,
+td {
+	padding: var(--space-2xs, 0.5rem);
+	text-align: start;
+}
+
+caption {
+	position: sticky;
+	inset-inline-start: 0;
+	max-inline-size: fit-content;
+}
+
+th,
+td {
+	vertical-align: text-top;
+}
+
+th {
+	@media not (forced-colors: active) {
+		background: var(--color-surface-inverse, CanvasText);
+		color: var(--color-text-inverse, Canvas);
+	}
+
+	font-weight: var(--font-weight-bold, bold);
+	line-height: var(--leading-tight, 1.1);
+}
+
+td {
+	max-inline-size: min(66vi, var(--measure, 25ch));
+}
+
+tr:nth-child(even) {
+	background-color: color-mix(
+		in srgb,
+		var(--color-text-normal, canvasText) 4%,
+		#0000
+	);
 }
 
 /* ============================================
