@@ -240,6 +240,18 @@
 					"unit": "rem"
 				}
 			}
+		},
+		"s-2xl": {
+			"$value": {
+				"min": {
+					"value": 1,
+					"unit": "rem"
+				},
+				"max": {
+					"value": 4.5,
+					"unit": "rem"
+				}
+			}
 		}
 	}
 }

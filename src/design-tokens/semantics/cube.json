@@ -31,7 +31,7 @@
 	},
 	"region-space": {
 		"$type": "fluidDimension",
-		"$value": "{space.m}",
+		"$value": "{space.s-l}",
 		"$description": "Base vertical padding for page sections"
 	},
 	"wrapper-max-width": {
@@ -41,7 +41,7 @@
 	},
 	"wrapper-padding-inline": {
 		"$type": "fluidDimension",
-		"$value": "{space.m}",
+		"$value": "{space.s-l}",
 		"$description": "Inline padding for wrapper composition"
 	},
 	"sidebar-content-min-width": {
