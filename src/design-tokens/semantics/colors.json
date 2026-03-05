@@ -18,7 +18,7 @@
 			"border": {
 				"$value": "{color.neutral.200}"
 			},
-			"inverted": {
+			"inverse": {
 				"$value": "{color.neutral.950}"
 			}
 		},
@@ -39,7 +39,7 @@
 			"link": {
 				"$value": "{color.pink.700}"
 			},
-			"inverted": {
+			"inverse": {
 				"$value": "{color.neutral.50}"
 			}
 		},

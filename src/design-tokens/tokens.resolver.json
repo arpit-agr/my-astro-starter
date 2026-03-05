@@ -5,21 +5,34 @@
 			"type": "set",
 			"name": "base",
 			"sources": [
-				{ "$ref": "./palette.json" },
-				{ "$ref": "./colors.json" },
-				{ "$ref": "./borders.json" },
-				{ "$ref": "./containers.json" },
-				{ "$ref": "./corners.json" },
-				{ "$ref": "./cube.json" },
-				{ "$ref": "./elevation.json" },
-				{ "$ref": "./focus.json" },
-				{ "$ref": "./form-controls.json" },
-				{ "$ref": "./motion.json" },
-				{ "$ref": "./panels.json" },
-				{ "$ref": "./shadows.json" },
-				{ "$ref": "./size.json" },
-				{ "$ref": "./space.json" },
-				{ "$ref": "./typography.json" }
+				{ "$ref": "./base/palette.json" },
+				{ "$ref": "./base/borders.json" },
+				{ "$ref": "./base/containers.json" },
+				{ "$ref": "./base/corners.json" },
+				{ "$ref": "./base/elevation.json" },
+				{ "$ref": "./base/motion.json" },
+				{ "$ref": "./base/shadows.json" },
+				{ "$ref": "./base/size.json" },
+				{ "$ref": "./base/space.json" },
+				{ "$ref": "./base/font.json" }
+			]
+		},
+		{
+			"type": "set",
+			"name": "semantics",
+			"sources": [
+				{ "$ref": "./semantics/colors.json" },
+				{ "$ref": "./semantics/cube.json" },
+				{ "$ref": "./semantics/focus.json" }
+			]
+		},
+		{
+			"type": "set",
+			"name": "components",
+			"sources": [
+				{ "$ref": "./components/button.json" },
+				{ "$ref": "./components/form-controls.json" },
+				{ "$ref": "./components/panels.json" }
 			]
 		},
 		{
@@ -28,7 +41,7 @@
 			"default": "light",
 			"contexts": {
 				"light": [],
-				"dark": [{ "$ref": "./dark.json" }]
+				"dark": [{ "$ref": "./semantics/dark.json" }]
 			}
 		}
 	]

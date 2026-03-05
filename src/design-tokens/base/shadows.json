@@ -1,15 +1,6 @@
 {
 	"shadow": {
 		"$type": "shadow",
-		"button": {
-			"$value": "{shadow.xs}"
-		},
-		"card": {
-			"$value": "{shadow.xs}"
-		},
-		"input": {
-			"$value": "{shadow.xs}"
-		},
 		"2xs": {
 			"$value": {
 				"offsetX": { "value": 0, "unit": "px" },

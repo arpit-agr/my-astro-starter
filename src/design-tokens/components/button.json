@@ -1,0 +1,15 @@
+{
+	"button": {
+		"color": {
+			"surface": { "$value": "{color.surface.inverse}" },
+			"text": { "$value": "{color.text.inverse}" }
+		},
+		"border": {
+			"width": { "$value": "{border.width.thin}" },
+			"style": { "$value": "{border.style}" },
+			"color": { "$value": "{color.transparent}" },
+			"radius": { "$value": "{radius.m}" }
+		},
+		"shadow": { "$value": "{shadow.xs}" }
+	}
+}

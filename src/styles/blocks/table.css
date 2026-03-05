@@ -88,8 +88,8 @@ td {
 
 th {
 	@media not (forced-colors: active) {
-		background: var(--color-surface-inverted, CanvasText);
-		color: var(--color-text-inverted, Canvas);
+		background: var(--color-surface-inverse, CanvasText);
+		color: var(--color-text-inverse, Canvas);
 	}
 }
 

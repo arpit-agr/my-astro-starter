@@ -244,34 +244,6 @@ a code {
 }
 
 /* ============================================
-	 Buttons
-   ============================================ */
-
-button,
-[type='button'],
-[type='submit'],
-[type='reset'],
-::file-selector-button {
-	padding: 0.25em 0.375em;
-	border: var(--border-width-thin, 1px) var(--border-style, solid)
-		var(--color-border-button, transparent);
-	border-radius: var(--radius-button, 0.25rem);
-	background: var(--color-surface-lowest, ButtonFace);
-
-	transition: scale var(--transition-fast, 75ms)
-		var(--ease-in, cubic-bezier(0.4, 0, 1, 1));
-
-	@supports (text-box: trim-both cap alphabetic) {
-		text-box: trim-both cap alphabetic;
-		padding: 0.5em;
-	}
-
-	&:active {
-		scale: 0.98;
-	}
-}
-
-/* ============================================
    Forms
    ============================================ */
 
@@ -321,6 +293,13 @@ select {
 	word-spacing: inherit;
 }
 
+input[type='checkbox'],
+input[type='radio'],
+input[type='range'],
+progress {
+	accent-color: var(--color-accent-fill-loud);
+}
+
 /* Checkbox/Radio alignment with labels */
 input[type='checkbox'],
 label:has(input[type='checkbox']),
@@ -332,7 +311,6 @@ label:has(input[type='radio']) {
 
 	font-size: var(--form-control-font-size, inherit);
 	line-height: var(--form-control-line-height, inherit);
-	accent-color: var(--color-accent-fill-loud);
 
 	user-select: none;
 	-webkit-user-select: none;
@@ -480,6 +458,35 @@ select {
 }
 
 /* ============================================
+	 Buttons
+   ============================================ */
+
+button,
+[type='button'],
+[type='submit'],
+[type='reset'],
+::file-selector-button {
+	padding: 0.25em 0.375em;
+	border: var(--button-border-width, 1px) var(--button-border-style, solid)
+		var(--button-border-color, transparent);
+	border-radius: var(--button-border-radius, 0.25rem);
+	background: var(--button-color-surface, ButtonFace);
+	color: var(--button-color-text);
+
+	transition: scale var(--transition-fast, 75ms)
+		var(--ease-in, cubic-bezier(0.4, 0, 1, 1));
+
+	@supports (text-box: trim-both cap alphabetic) {
+		text-box: trim-both cap alphabetic;
+		padding: 0.5em;
+	}
+
+	&:active {
+		scale: 0.98;
+	}
+}
+
+/* ============================================
    Code
    ============================================ */
 
@@ -510,8 +517,8 @@ pre {
 }
 
 pre:has(code) {
-	background: var(--color-surface-inverted, CanvasText);
-	color: var(--color-text-inverted, Canvas);
+	background: var(--color-surface-inverse, CanvasText);
+	color: var(--color-text-inverse, Canvas);
 }
 
 pre code {

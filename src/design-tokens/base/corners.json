@@ -1,7 +1,6 @@
 {
 	"radius": {
 		"$type": "dimension",
-		"button": { "$value": "{radius.m}" },
 		"none": { "$value": { "value": 0, "unit": "rem" } },
 		"s": {
 			"$value": {

@@ -3,11 +3,11 @@
  *
  * 1. Go to https://utopia.fyi/type/calculator and configure your type scale.
  *    Save the generated CSS to src/design-tokens/utopia-type.css
- *    Run: node utopia-to-sugarcube.js < src/design-tokens/utopia-type.css > src/design-tokens/size.json
+ *    Run: node utopia-to-sugarcube.js < src/design-tokens/base/utopia-type.css > src/design-tokens/base/size.json
  *
  * 2. Go to https://utopia.fyi/space/calculator and configure your space scale.
  *    Save the generated CSS to src/design-tokens/utopia-space.css
- *    Run: node utopia-to-sugarcube.js < src/design-tokens/utopia-space.css > src/design-tokens/space.json
+ *    Run: node utopia-to-sugarcube.js < src/design-tokens/base/utopia-space.css > src/design-tokens/base/space.json
  *
  * The script auto-detects --step-* (type) vs --space-* (space) from the input
  * and outputs the correct Sugarcube token structure for each.

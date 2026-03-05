@@ -16,12 +16,12 @@ export default defineConfig({
 		padding: {
 			source: 'space.*',
 			prefix: 'p',
-			directions: ['top', 'right', 'bottom', 'left', 'x', 'y', 'full', 'all'],
+			directions: ['top', 'right', 'bottom', 'left', 'x', 'y', 'all'],
 		},
 		margin: {
 			source: 'space.*',
 			prefix: 'm',
-			directions: ['top', 'right', 'bottom', 'left', 'x', 'y', 'full', 'all'],
+			directions: ['top', 'right', 'bottom', 'left', 'x', 'y', 'all'],
 		},
 		'--flow-space': {
 			source: 'space.*',
