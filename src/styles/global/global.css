@@ -576,10 +576,6 @@ video {
 figcaption {
 	font-size: var(--size-step--1, 0.875rem);
 	font-family: var(--font-mono, monospace);
-
-	:where(img, blockquote) + & {
-		margin-block-start: var(--space-2xs, 0.5rem);
-	}
 }
 
 video,
