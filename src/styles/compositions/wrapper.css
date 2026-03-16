@@ -11,5 +11,4 @@ CUSTOM PROPERTIES AND CONFIGURATION
 	margin-inline: auto;
 	max-width: var(--wrapper-max-width, 1360px);
 	padding-inline: var(--wrapper-padding-inline, 1rem);
-	position: relative;
 }
