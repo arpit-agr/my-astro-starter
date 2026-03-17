@@ -512,6 +512,7 @@ samp {
 
 pre {
 	padding: var(--space-s, 0.875rem);
+	border-radius: var(--radius-m, 0.25em);
 	overflow-inline: auto;
 	writing-mode: lr;
 	direction: ltr;
@@ -653,7 +654,6 @@ dialog:modal::backdrop {
 	border: var(--border-width-thin, 1px) var(--border-style, solid)
 		var(--color-surface-border, currentColor);
 	border-radius: var(--radius-m, 0.25em);
-	font-size: max(1rem, var(--size-step--1));
 	overflow: auto;
 
 	background:
@@ -702,7 +702,7 @@ table {
 caption,
 th,
 td {
-	padding: var(--space-2xs, 0.5rem);
+	padding: var(--space-3xs-2xs, 0.25rem);
 	text-align: start;
 }
 
