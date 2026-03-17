@@ -1,32 +1,32 @@
 {
 	"cluster-gap": {
 		"$type": "fluidDimension",
-		"$value": "{space.s}",
+		"$value": "{space.s-m}",
 		"$description": "Base gap spacing for cluster composition"
 	},
 	"grid-gap": {
 		"$type": "fluidDimension",
-		"$value": "{space.m}",
+		"$value": "{space.s-m}",
 		"$description": "Default gap for grid composition"
 	},
 	"repel-gap": {
 		"$type": "fluidDimension",
-		"$value": "{space.m}",
+		"$value": "{space.s-m}",
 		"$description": "Default gap for repel composition"
 	},
 	"sidebar-gap": {
 		"$type": "fluidDimension",
-		"$value": "{space.m}",
+		"$value": "{space.s-m}",
 		"$description": "Default gap for sidebar composition"
 	},
 	"switcher-gap": {
 		"$type": "fluidDimension",
-		"$value": "{space.m}",
+		"$value": "{space.s-m}",
 		"$description": "Default gap for switcher composition"
 	},
 	"flow-space": {
 		"$type": "fluidDimension",
-		"$value": "{space.m}",
+		"$value": "{space.s-m}",
 		"$description": "Base vertical spacing in flow composition"
 	},
 	"region-space": {
