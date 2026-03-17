@@ -1,10 +1,10 @@
-<figure>
+<figure class="flow">
 	<blockquote>
 		<slot />
 	</blockquote>
 	{
 		Astro.slots.has('author') && (
-			<figcaption>
+			<figcaption class="flow-space-3xs-2xs">
 				<slot name="author" />
 				{Astro.slots.has('citation') && (
 					<Fragment>
